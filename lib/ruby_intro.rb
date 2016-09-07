@@ -3,16 +3,40 @@
 # Part 1
 
 def sum arr
-  total = 0
-
-  arr.each do |x| 
-    total += x
-  end
-  return total
+  	total = 0
+	
+	arr.each {|x|
+		total += x
+	}
+	return total
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  total = 0
+  maxHigh = 0
+  maxLow = 0
+  
+  if arr.size == 0
+    return total
+  elsif arr.size == 1
+    return arr[0]
+  else
+    maxHigh = arr[0]
+    maxLow = arr[1]
+  end
+
+  arr[2, arr.size].each { |x|
+    if x > maxLow
+      maxLow = x
+        if maxLow > maxHigh
+            total = maxHigh
+            maxHigh = maxLow
+            maxLow = total
+        end
+    end
+  }
+    total = maxHigh + maxLow
+    return total
 end
 
 def sum_to_n? arr, n
