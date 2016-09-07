@@ -33,14 +33,29 @@ def max_2_sum arr
             maxHigh = maxLow
             maxLow = total
         end
-    end
+    end 
   }
     total = maxHigh + maxLow
     return total
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  
+  if arr.size <= 1
+    return false
+  end
+  
+  arr.each_with_index { |x, index_x|
+        arr.each_with_index { |y, index_y|
+          if not index_x == index_y
+            total = x + y
+            if total == n
+              return true
+            end
+          end
+      }
+  }
+  return false
 end
 
 # Part 2
