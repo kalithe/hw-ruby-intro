@@ -1,4 +1,5 @@
 # When done, submit this entire file to the autograder.
+# Jose Delgado    10 Sept 2016    CSCI 420blazeit
 
 # Part 1
 
@@ -80,7 +81,7 @@ def binary_multiple_of_4? s
   end
 end
 
-# Part 3
+# Part 3 -- Done in conjunction with Robert DeCort
 
 class BookInStock
   attr_accessor :isbn , :price
@@ -94,5 +95,4 @@ class BookInStock
   def price_as_string
     return "$%0.2f" % [@price]
   end
-  
 end
